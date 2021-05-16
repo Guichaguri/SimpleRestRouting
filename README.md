@@ -3,7 +3,7 @@ This is a small, experimental project template for a simple REST APIs.
 
 There are some cases that you don't want to use a beast such as Laravel, Symphony 2 or CodeIgniter. They are great, but it feels like you're using a sledgehammer to crack a nut.
 
-This only maps a combination of URL and HTTP method to an specific PHP file.
+This only maps a combination of the URL and the HTTP method to an specific PHP file.
 
 ## Routing
 Each endpoint is mapped to a file, this is done through rewrite rules on Apache, IIS or Nginx.
@@ -29,21 +29,23 @@ For the method being `GET` and the path being `/api/users/me`, it will try to re
 ```
 └── api/
     ├── auth/
-    │   ├── login.post.php				POST   /api/auth/login
-    │   ├── logout.post.php				POST   /api/auth/logout
-    │   └── change-password.post.php	POST   /api/auth/change-password
+    │   ├── login.post.php              POST   /api/auth/login
+    │   ├── logout.post.php             POST   /api/auth/logout
+    │   └── change-password.post.php    POST   /api/auth/change-password
     ├── users/
-    │   ├── index.get.php				GET    /api/users
-    │   ├── index.post.php				POST   /api/users
-    │   ├── index.put.php				PUT    /api/users
-    │   ├── index.delete.php			DELETE /api/users
-    │   └── me.get.php					GET    /api/users/me
+    │   ├── index.get.php               GET    /api/users
+    │   ├── index.post.php              POST   /api/users
+    │   ├── index.put.php               PUT    /api/users
+    │   ├── index.delete.php            DELETE /api/users
+    │   └── me.get.php                  GET    /api/users/me
     └── tasks/
-        ├── index.get.php				GET    /api/tasks
-        └── index.post.php				POST   /api/tasks
+        ├── index.get.php               GET    /api/tasks
+        └── index.post.php              POST   /api/tasks
 ```
 
-## Server Config
+The sample directory also contains a working example.
+
+## Usage
 
 ### Apache or LiteSpeed
 Copy the `.htaccess` file to the root directory your REST API is located.
