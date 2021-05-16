@@ -1,0 +1,69 @@
+# Examples
+# GET  /api/user            ->  /api/user/index.get.php
+# POST /api/user            ->  /api/user/index.post.php
+# ANY  /api/user            ->  /api/user/index.php
+# GET  /api/user/me         ->  /api/user/me.get.php
+# POST /api/user/password   ->  /api/user/password.post.php
+# ANY  /api/user/roles      ->  /api/user/roles.php
+
+DirectoryIndex disabled
+DirectorySlash Off
+RewriteEngine On
+
+# GET
+
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{REQUEST_FILENAME}/index.get.php -f
+RewriteRule (.*) $1/index.get.php [L]
+
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{REQUEST_FILENAME}.get.php -f
+RewriteRule (.*) $1.get.php [L]
+
+# POST
+
+RewriteCond %{REQUEST_METHOD} POST
+RewriteCond %{REQUEST_FILENAME}/index.post.php -f
+RewriteRule (.*) $1/index.post.php [L]
+
+RewriteCond %{REQUEST_METHOD} POST
+RewriteCond %{REQUEST_FILENAME}.post.php -f
+RewriteRule (.*) $1.post.php [L]
+
+# PUT
+
+RewriteCond %{REQUEST_METHOD} PUT
+RewriteCond %{REQUEST_FILENAME}/index.put.php -f
+RewriteRule (.*) $1/index.put.php [L]
+
+RewriteCond %{REQUEST_METHOD} PUT
+RewriteCond %{REQUEST_FILENAME}.put.php -f
+RewriteRule (.*) $1.put.php [L]
+
+# DELETE
+
+RewriteCond %{REQUEST_METHOD} DELETE
+RewriteCond %{REQUEST_FILENAME}/index.delete.php -f
+RewriteRule (.*) $1/index.delete.php [L]
+
+RewriteCond %{REQUEST_METHOD} DELETE
+RewriteCond %{REQUEST_FILENAME}.delete.php -f
+RewriteRule (.*) $1.delete.php [L]
+
+# PATCH
+
+RewriteCond %{REQUEST_METHOD} PATCH
+RewriteCond %{REQUEST_FILENAME}/index.patch.php -f
+RewriteRule (.*) $1/index.patch.php [L]
+
+RewriteCond %{REQUEST_METHOD} PATCH
+RewriteCond %{REQUEST_FILENAME}.patch.php -f
+RewriteRule (.*) $1.patch.php [L]
+
+# ANY
+
+RewriteCond %{REQUEST_FILENAME}/index.php -f
+RewriteRule (.*) $1/index.php [L]
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule (.*) $1.php [L]
