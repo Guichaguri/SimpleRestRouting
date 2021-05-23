@@ -5,6 +5,9 @@ There are some cases that you don't want to use a beast such as Laravel, Symphon
 
 This only maps a combination of the URL and the HTTP method to an specific PHP file.
 
+You have to manually require the files you need or your autoloader, write all the code to handle the requests, validate things such as authorization manually.
+You probably would want to use a simple framework such as [Slim](https://www.slimframework.com/) instead.
+
 ## Routing
 Each endpoint is mapped to a file, this is done through rewrite rules on Apache, IIS or Nginx.
 
